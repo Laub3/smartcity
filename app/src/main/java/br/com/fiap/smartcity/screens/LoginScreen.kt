@@ -31,6 +31,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.fiap.smartcity.R
 
 @Composable
@@ -133,7 +134,7 @@ fun LoginScreen() {
 
 @Preview(showSystemUi = true)
 @Composable
-fun LoginScreenPreview() {
+fun LoginPreview(navController: NavController) {
     Surface(modifier = Modifier
         .fillMaxSize()
         .background(Color(0xFF673AB7))) {
