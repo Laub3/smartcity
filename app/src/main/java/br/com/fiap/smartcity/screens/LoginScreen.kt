@@ -32,10 +32,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import br.com.fiap.smartcity.R
+import br.com.fiap.smartcity.Screen
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
     Column(
         verticalArrangement = Arrangement.SpaceBetween
     ) {
@@ -60,7 +62,6 @@ fun LoginScreen() {
                 color = Color.Black,
                 fontWeight = FontWeight.Bold,
             )
-
         }
         Column(modifier = Modifier
             .fillMaxWidth()
@@ -91,7 +92,10 @@ fun LoginScreen() {
                 label = {
                     Text(text = "Senha")
                 })
-            Button(onClick = {},
+            Button(
+                onClick = {
+                    navController.navigate(route = Screen.Home.route)
+                          },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(40.dp),
@@ -103,11 +107,7 @@ fun LoginScreen() {
                     fontSize = 19.sp,
                     color = Color.Black,
                     fontWeight = FontWeight.Bold)
-
-
-
             }
-
         }
         Row(
             modifier = Modifier
@@ -134,10 +134,10 @@ fun LoginScreen() {
 
 @Preview(showSystemUi = true)
 @Composable
-fun LoginPreview(navController: NavController) {
+fun LoginScreenPreview() {
     Surface(modifier = Modifier
         .fillMaxSize()
         .background(Color(0xFF673AB7))) {
-        LoginScreen()
+        LoginScreen(navController = rememberNavController())
     }
 }

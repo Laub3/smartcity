@@ -11,9 +11,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavController) {
     Column(
         verticalArrangement = Arrangement.SpaceBetween
     ) {
@@ -23,11 +24,11 @@ fun HomeScreen() {
 
 @Preview(showSystemUi = true)
 @Composable
-fun HomePreview(navController: NavController) {
+fun HomeScreenPreview() {
     Surface(modifier = Modifier
         .fillMaxSize()
         .background(Color(0xFF673AB7))) {
-        HomeScreen()
+        HomeScreen(navController = rememberNavController())
     }
 }
 
