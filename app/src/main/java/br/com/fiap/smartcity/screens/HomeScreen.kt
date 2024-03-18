@@ -41,7 +41,7 @@ import br.com.fiap.smartcity.Screen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Scaffold(navController: NavController, userName: String) {
+fun Scaffold(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -150,7 +150,7 @@ fun Scaffold(navController: NavController, userName: String) {
 }
 @Composable
 fun HomeScreen(navController: NavController) {
-    Scaffold(navController, userName = "Lucas Laube")
+    Scaffold(navController)
 }
 
 
@@ -159,7 +159,7 @@ fun HomeScreen(navController: NavController) {
 fun HomeScreenPreview() {
     Surface(modifier = Modifier
         .fillMaxSize()
-        .background(Color(0xFF673AB7))) {
+        ) {
         HomeScreen(navController = rememberNavController())
     }
 }
