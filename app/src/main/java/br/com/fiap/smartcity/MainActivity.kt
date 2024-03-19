@@ -15,6 +15,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             SmartcityTheme {
                 navController = rememberNavController()
+                // Usando a função com o NavHost
                 SetupNavGraph(navController = navController)
             }
         }

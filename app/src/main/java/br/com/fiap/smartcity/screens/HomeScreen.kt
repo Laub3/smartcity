@@ -51,7 +51,11 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import br.com.fiap.smartcity.Screen
 
+// Função para agrupar botões no home
+
+// No futuro vamos remover o Scaffold em todas as telas de deixar ele unico sendo somente a mudança de tela dentro de um Scaffold
 @Composable
+// Função para alinhar os botões e deixando o generico, se precisar de mais rotas é só adicionar um novo BlackBorderedButton() passando a rota como destino
 fun SquareButtonRow(navController: NavController) {
     Column {
         Row {
@@ -81,6 +85,7 @@ fun BlackBorderedButton(text: String, icons: ImageVector,onClick: () -> Unit) {
             contentAlignment = Alignment.Center
         ) {
             Text(text)
+            // No futuro, vamos colocar icones
 //            Icons(Icons)
         }
     }
@@ -123,7 +128,7 @@ fun Scaffold(navController: NavController) {
                                 IconButton(onClick = {navController.navigate(route = Screen.ResidueManagement.route)}) {
                                     Icon(
                                         Icons.Filled.Delete,
-                                        contentDescription = "Localized description"
+                                        contentDescription = "Botão para navegar até Residuos"
                                     )
                                 }
                                 Text(
@@ -138,7 +143,7 @@ fun Scaffold(navController: NavController) {
                                 IconButton(onClick = {navController.navigate(route = Screen.Reports.route)}) {
                                     Icon(
                                         Icons.Filled.Call,
-                                        contentDescription = "Localized description"
+                                        contentDescription = "Botão para navegar até Reportar"
                                     )
                                 }
                                 Text(
@@ -153,7 +158,7 @@ fun Scaffold(navController: NavController) {
                                 IconButton(onClick = {navController.navigate(route = Screen.Education.route)}) {
                                     Icon(
                                         Icons.Filled.Face,
-                                        contentDescription = "Localized description"
+                                        contentDescription = "Botão para navegar até Educação"
                                     )
                                 }
                                 Text(
@@ -168,7 +173,7 @@ fun Scaffold(navController: NavController) {
                                 IconButton(onClick = {navController.navigate(route = Screen.Help.route)}) {
                                     Icon(
                                         Icons.Filled.Info,
-                                        contentDescription = "Localized description"
+                                        contentDescription = "Botão para navegar até ajuda"
                                     )
                                 }
                                 Text(
