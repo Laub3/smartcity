@@ -22,6 +22,7 @@ import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Face
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
@@ -58,7 +59,8 @@ fun ResidueManagementScaffold(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                modifier = Modifier.background(Color.Blue),
+                modifier = Modifier
+                    .clickable(onClick = {navController.navigate(route = Screen.Home.route)}),
                 actions = {
                     Icon(
                         Icons.Default.Notifications,
@@ -68,7 +70,7 @@ fun ResidueManagementScaffold(navController: NavController) {
                     )
                 },
                 title = {
-                    Icon(Icons.Default.Menu, contentDescription = "Add")
+                    Icon(Icons.Default.Home, contentDescription = "Add")
                 },
             )
         },

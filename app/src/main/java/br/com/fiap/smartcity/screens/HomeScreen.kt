@@ -55,7 +55,7 @@ fun Scaffold(navController: NavController) {
                     )
                 },
                 title = {
-                    Icon(Icons.Default.Menu, contentDescription = "Add")
+//                    Icon(Icons.Default.Menu, contentDescription = "Add")
                 },
             )
         },
